@@ -1,0 +1,332 @@
+:root {
+    --primary-color: #0c0c11;
+    --secondary-color: #bbe546;
+    --accent-color: #818cf8;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --bg-color: #4674d9;
+    --text-color: aliceblue;
+}
+
+.archivo-unique {
+    font-family: "Archivo", system-ui, -apple-system, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: var(--archivo-weight, 400);
+    font-style: normal;
+    font-variation-settings: "wdth" 100, "wght" var(--archivo-weight, 400);
+    line-height: 1.5;
+    letter-spacing: 0.025em;
+}
+
+.dancing-script-unique {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Dancing Script", cursive;
+    background-image: url("https://img.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_79603-1409.jpg?ga=GA1.1.519306422.1747586292&semt=ais_hybrid&w=740");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    background: radial-gradient(circle, rgba(0, 212, 255, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(2, 0, 36, 1) 100%);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.5s ease;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-family: "Dancing Script", cursive;
+    font-weight: 900;
+    color: rgb(243, 249, 249);
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+                2px 2px 10px rgba(255, 255, 255, 0.5),
+                2px 2px 20px rgba(255, 255, 255, 0.3),
+                2px 2px 30px rgba(255, 255, 255, 0.1),
+                2px 2px 40px rgba(255, 255, 255, 0.05);
+}
+
+.subtitle {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.dice-container {
+    padding-top: 2rem;
+    perspective: 1000px;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+}
+
+.dice {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border: 2px solid rgba(2, 2, 2, 0.281);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(234, 230, 230, 0.39);
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.face img,
+.dice-image {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    padding: 20px;
+}
+
+.face.front  { transform: translateZ(80px); }
+.face.back   { transform: rotateY(180deg) translateZ(80px); }
+.face.right  { transform: rotateY(90deg) translateZ(80px); }
+.face.left   { transform: rotateY(-90deg) translateZ(80px); }
+.face.top    { transform: rotateX(90deg) translateZ(80px); }
+.face.bottom { transform: rotateX(-90deg) translateZ(80px); }
+
+.matched {
+    border-color: var(--success-color) !important;
+    animation: matchPulse 1s ease-in-out infinite;
+}
+
+@keyframes matchPulse {
+    0%   { box-shadow: 0 0 20px var(--success-color); }
+    50%  { box-shadow: 0 0 40px var(--success-color); }
+    100% { box-shadow: 0 0 20px var(--success-color); }
+}
+
+.info {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(19, 15, 15, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Archivo', sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#button {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(221, 221, 228, 0.4);
+}
+
+.stats p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+
+.results {
+    margin-top: 2rem;
+}
+
+.results h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.history-container {
+    background: rgba(248, 246, 246, 0.989);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.history-list {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    background: var(--bg-color);
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: large;
+    padding: 0.5rem;
+}
+
+.history-item:hover {
+    transform: translateX(5px);
+}
+
+.history-item.match {
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.history-item.miss {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.history-item .result {
+    font-weight: bold;
+}
+
+.history-item.match .result {
+    color: var(--success-color);
+}
+
+.history-item.miss .result {
+    color: var(--error-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Add this at the END of your current CSS */
+@media (max-width: 768px) {
+.container {
+    padding: 1rem;
+    width: 95%;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.dice-container {
+    gap: 5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dice {
+    width: 100px;
+    height: 100px;
+}
+
+.face img,
+.dice-image {
+    width: 100%;
+    height: 100%;
+}
+
+
+.face.front  { transform: translateZ(50px); }
+.face.back   { transform: rotateY(180deg) translateZ(50px); }
+.face.right  { transform: rotateY(90deg) translateZ(50px); }
+.face.left   { transform: rotateY(-90deg) translateZ(50px); }
+.face.top    { transform: rotateX(90deg) translateZ(50px); }
+.face.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+.info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+}
+
+.stats p {
+    font-size: 1rem;
+}
+
+.results h3 {
+    font-size: 1rem;
+}
+
+.history-item {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.9rem;
+}
+}
+
+

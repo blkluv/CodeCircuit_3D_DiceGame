@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Dice Roller</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Berkshire+Swash&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="game-header">
+            <h1>3D Dice Roller</h1>
+            <p class="subtitle">Match the dice to score points!</p>
+        </div>
+        
+
+        <div class="dice-container">
+            <div class="dice" id="dice1">
+                <div class="face front"><img src="https://img.freepik.com/premium-vector/cherry-icon_340607-50.jpg" alt="1" class="dice-image"></div>
+            <div class="face back"><img src="https://cdn3.iconfinder.com/data/icons/casino/256/Plum-256.png" alt="6" class="dice-image"></div>
+                <div class="face right"><img src="https://cdn3.iconfinder.com/data/icons/casino/256/Clover-256.png" alt="3" class="dice-image"></div>
+                <div class="face left"><img src="https://cdn3.iconfinder.com/data/icons/casino/256/Orange-256.png" alt="4" class="dice-image"></div>
+                <div class="face top"><img src="https://cdn3.iconfinder.com/data/icons/casino/256/Grapes-256.png" alt="2" class="dice-image"></div>
+                <div class="face bottom"><img src="https://cdn3.iconfinder.com/data/icons/casino/256/Coins-256.png" alt="5" class="dice-image"></div>
+            </div>
+            <div class="dice" id="dice2">
+                <div class="face front"><img src="https://img.freepik.com/premium-vector/cherry-icon_340607-50.jpg" alt="1" class="dice-image"></div>
+            <div class="face back"><img src="https://cdn3.iconfinder.com/data/icons/casino/256/Plum-256.png" alt="6" class="dice-image"></div>
+                <div class="face right"><img src="https://cdn3.iconfinder.com/data/icons/casino/256/Clover-256.png" alt="3" class="dice-image"></div>
+                <div class="face left"><img src="https://cdn3.iconfinder.com/data/icons/casino/256/Orange-256.png" alt="4" class="dice-image"></div>
+                <div class="face top"><img src="https://cdn3.iconfinder.com/data/icons/casino/256/Grapes-256.png" alt="2" class="dice-image"></div>
+                <div class="face bottom"><img src="https://cdn3.iconfinder.com/data/icons/casino/256/Coins-256.png" alt="5" class="dice-image"></div>
+            </div>
+        </div>
+        <div id="button">
+        <button id="rollBtn" class="btn">Roll Dice</button>
+        </div>
+        <div class="info">
+        <div class="controls">
+            <div class="stats">
+                <p>Rolls: <span id="rollCount">0</span></p>
+                <p>Points: <span id="points">0</span></p>
+                <p>Match Rate: <span id="matchRate">0%</span></p>
+            </div>
+        </div>
+
+        <div class="results">
+            <h3>Game History</h3>
+            <div class="history-container">
+                <div class="history-list" id="historyList"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
